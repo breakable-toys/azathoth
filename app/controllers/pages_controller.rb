@@ -65,6 +65,6 @@ class PagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def page_params
-      params.expect(page: [ :title ])
+      params.expect(page: [ :title, :content ])
     end
 end
