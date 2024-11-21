@@ -10,7 +10,11 @@
     <%= link_to "New page", new_page_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <ul id="pages" class="space-y-3">
-    <%= render collection: @pages, partial: "page_list", as: :page %>
-  </ul>
+  <%= render "search_form" %>
+
+  <%= turbo_frame_tag :pages, data: { turbo_action: "advance" } do %>
+    <ul id="pages" class="mt-10 space-y-3">
+      <%= render collection: @pages, partial: "page_list", as: :page %>
+    </ul>
+  <% end %>
 </div>
