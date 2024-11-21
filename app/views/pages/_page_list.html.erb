@@ -1,3 +1,7 @@
-<ul>
-  <%= link_to page.title, page, data: { turbo_frame: "_top" } %>
+<ul class="flex justify-between">
+  <%= link_to_unless @attachable, page.title, page, data: { turbo_frame: "_top" } %>
+
+  <% if @attachable %>
+    <span data-controller="attachable" data-attachable-target="cta" data-action="click->attachable#attach" class="cursor-pointer">Attach</span>
+  <% end %>
 </ul>
