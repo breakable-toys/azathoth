@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   # GET /pages or /pages.json
   def index
     @pages = Page.where("title LIKE ?", "%#{params[:q]}%")
-    @attachable = true if params[:attachable]
+    @page_id = params[:page_id]
   end
 
   # GET /pages/1 or /pages/1.json

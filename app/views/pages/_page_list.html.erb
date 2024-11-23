@@ -1,7 +1,7 @@
 <ul class="flex justify-between">
   <%= link_to_unless @attachable, page.title, page, data: { turbo_frame: "_top" } %>
 
-  <% if @attachable %>
-    <span data-controller="attachable" data-attachable-target="cta" data-action="click->attachable#attach" class="cursor-pointer">Attach</span>
+  <% if @page_id %>
+    <%= link_to "Embed", new_embed_path(page_id: @page_id, embedded_page_id: page.id), data: { turbo_frame: dom_id(Embed.new), turbo_stream: true } %>
   <% end %>
 </ul>

@@ -1,4 +1,5 @@
+<%# locals: (page_id: nil) -%>
 <%= form_with(url: pages_path, method: :get, data: { controller: "search", search_target: "form", turbo_frame: "pages" }) do |form| %>
-  <%= form.hidden_field :attachable, value: true if action_name == "edit" %>
+  <%= form.hidden_field :page_id, value: page_id if @page %>
   <%= form.text_field :q, placeholder: "Search page", data: { action: "input->search#submit" }, class: ""%>
 <% end %>

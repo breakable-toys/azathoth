@@ -8,6 +8,10 @@
 
 <%= render "form", page: @page %>
 
-<%= render "search_form" %>
+<%= turbo_frame_tag dom_id(Embed.new), class: "mt-10 block" %>
+
+<%= turbo_frame_tag :search_form do %>
+  <%= render partial: "search_form", locals: { page_id: @page.id } %>
+<% end %>
 
 <%= turbo_frame_tag :pages %>

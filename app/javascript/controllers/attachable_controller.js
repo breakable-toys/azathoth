@@ -2,9 +2,14 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="attachable"
 export default class extends Controller {
-  static targets = ["cta"]
+  static values = {
+    sgid: String,
+    content: String
+  }
 
-  attach() {
-    console.log("attach")
+  connect() {
+    const editor = document.querySelector("trix-editor").editor
+    const attachment = new Trix.Attachment({ content: this.contentValue, sgid: this.sgidValue })
+    editor.insertAttachment(attachment)
   }
 }

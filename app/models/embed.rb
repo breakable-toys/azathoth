@@ -9,6 +9,10 @@ class Embed < ApplicationRecord
   end
 
   def to_attachable_partial_path
-    "embeds/embed"
+    "embeds/attachable"
+  end
+
+  def to_trix_content_attachment_partial_path
+    "embeds/trix_content_attachment"
   end
 end

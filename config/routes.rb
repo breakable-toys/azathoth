@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :embeds, only: %i[ new create ]
   resources :pages
 
   get "up" => "rails/health#show", as: :rails_health_check
