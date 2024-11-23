@@ -1,0 +1,7 @@
+<%= turbo_stream.replace dom_id(Embed.new), locals: { embed: @embed } do %>
+  <%= tag.div data: {
+    controller: "attachable",
+    attachable_sgid_value: @embed.attachable_sgid,
+    attachable_content_value: render(partial: "embeds/trix_content_attachment", locals: { embed: @embed })
+  } %>
+<% end %>

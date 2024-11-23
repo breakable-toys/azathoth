@@ -1,0 +1,3 @@
+<%= turbo_stream.update dom_id(Embed.new), partial: "form", locals: { embed: @embed } %>
+<%= turbo_stream.update :search_form, partial: "pages/search_form", locals: { page_id: @page.id } %>
+<%= turbo_stream.update :pages %>

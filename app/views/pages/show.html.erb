@@ -1,0 +1,7 @@
+<%= render @page %>
+
+<div class="mt-10 space-x-3">
+  <%= link_to "Edit this page", edit_page_path(@page), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <%= link_to "Back to pages", pages_path, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <%= button_to "Destroy this page", @page, method: :delete, form: { class: "inline-block" }, class: "rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+</div>
